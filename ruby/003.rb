@@ -29,9 +29,15 @@ describe Fixnum do
 
   context '#largest_prime_factor' do
     it 'will return the largest prime factor' do
-      num.largest_prime_factor.must_equal 29
+      num.prime_division.flatten.max.must_equal 29
     end
   end
+
+  #context '#largest_prime_factor' do
+    #it 'will return the largest prime factor' do
+      #num.largest_prime_factor.must_equal 29
+    #end
+  #end
 
   #context '#get_primes' do
     #it 'returns all primes up to self' do
@@ -41,5 +47,5 @@ describe Fixnum do
 end
 
 #puts Benchmark.measure { 13195.get_primes }
-puts Benchmark.measure { 13195.largest_prime_factor }
-#puts "The answer is: #{600851475143.largest_prime_factor}"
+#puts Benchmark.measure { 13195.largest_prime_factor }
+puts "The answer is: #{600851475143.prime_division.flatten.max}"
